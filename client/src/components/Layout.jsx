@@ -26,10 +26,11 @@ import {
   Spinner,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { FiBell } from 'react-icons/fi';
+import { FiBell, FiBellOff } from 'react-icons/fi';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 
 const Layout = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -120,18 +121,19 @@ const Layout = ({ children }) => {
         top={0}
         zIndex={10}
         backdropFilter="blur(8px)"
-        backgroundColor={useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')}
+        backgroundColor={useColorModeValue('rgba(75, 97, 144, 0.41)', 'rgba(0, 1, 3, 0.8)')}
       >
         <Container maxW="container.md">
           <Flex h={16} alignItems="center" justifyContent="space-between">
             <Heading
+            fontFamily= "Helvetica Neue"
               size="lg"
               bgGradient="linear(to-r, brand.400, brand.600)"
               bgClip="text"
               cursor="pointer"
               onClick={() => navigate('/')}
             >
-              SocialApp
+              Wavely
             </Heading>
 
             {user && (
@@ -193,7 +195,7 @@ const Layout = ({ children }) => {
                               p={3}
                               borderBottomWidth="1px"
                               borderColor={borderColor}
-                              _hover={{ bg: useColorModeValue('gray.50', 'gray.700') }}
+                              _hover={{ bg: useColorModeValue('blue.50', 'blue.700') }}
                               cursor="pointer"
                               onClick={() => handleNotificationClick(notification)}
                               bg={!notification.read ? useColorModeValue('gray.50', 'gray.700') : 'transparent'}

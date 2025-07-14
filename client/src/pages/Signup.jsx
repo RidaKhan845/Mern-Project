@@ -32,7 +32,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const toast = useToast();
   
-  const bg = useColorModeValue('white', 'gray.800');
+  const bg = useColorModeValue('transparent', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   const handleSubmit = async (e) => {

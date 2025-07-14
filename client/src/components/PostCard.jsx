@@ -130,7 +130,7 @@ const PostCard = ({ post, onUpdate }) => {
       border="1px"
       borderColor={borderColor}
       shadow="sm"
-      _hover={{ shadow: 'md' }}
+      _hover={{ shadow: 'rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}
       transition="all 0.2s"
     >
       <VStack align="stretch" spacing={4}>
@@ -162,7 +162,7 @@ const PostCard = ({ post, onUpdate }) => {
             <Button
               leftIcon={isFollowing ? <FiUserCheck /> : <FiUserPlus />}
               size="sm"
-              colorScheme={isFollowing ? "gray" : "brand"}
+              colorScheme={isFollowing ? "blue" : "brand"}
               variant={isFollowing ? "outline" : "solid"}
               onClick={handleFollow}
               isLoading={followLoading}

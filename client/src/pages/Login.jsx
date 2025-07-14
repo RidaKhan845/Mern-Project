@@ -25,18 +25,18 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   const { signIn } = useAuth();
   const navigate = useNavigate();
   const toast = useToast();
-  
-  const bg = useColorModeValue('white', 'gray.800');
+
+  const bg = useColorModeValue('transparent', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) return;
-    
+
     setLoading(true);
     try {
       await signIn(email, password);
@@ -85,7 +85,7 @@ const Login = () => {
             >
               Welcome Back
             </Heading>
-            
+
             <VStack spacing={4} w="full">
               <FormControl>
                 <FormLabel>Email</FormLabel>
@@ -96,7 +96,7 @@ const Login = () => {
                   placeholder="Enter your email"
                 />
               </FormControl>
-              
+
               <FormControl>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
@@ -118,7 +118,7 @@ const Login = () => {
                 </InputGroup>
               </FormControl>
             </VStack>
-            
+
             <Button
               type="submit"
               colorScheme="brand"
@@ -128,7 +128,7 @@ const Login = () => {
             >
               Sign In
             </Button>
-            
+
             <HStack>
               <Text>Don't have an account?</Text>
               <Link as={RouterLink} to="/signup" color="brand.500">

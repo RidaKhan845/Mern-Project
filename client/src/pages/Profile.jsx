@@ -99,11 +99,12 @@ const Profile = () => {
   return (
     <VStack spacing={6} align="stretch">
       <Box
-        bg={bg}
+        bg="transparent"
         p={6}
         borderRadius="xl"
         border="1px"
         borderColor={borderColor}
+        boxShadow=""
         shadow="sm"
       >
         <VStack spacing={4}>
@@ -126,11 +127,11 @@ const Profile = () => {
           </VStack>
           
           <StatGroup>
-            <Stat textAlign="center">
+            <Stat textAlign="center"  mr={3}>
               <StatNumber>{posts.length}</StatNumber>
               <StatLabel>Posts</StatLabel>
             </Stat>
-            <Stat textAlign="center">
+            <Stat textAlign="center" mr={3}>
               <StatNumber>{profileUser.followersCount}</StatNumber>
               <StatLabel>Followers</StatLabel>
             </Stat>
